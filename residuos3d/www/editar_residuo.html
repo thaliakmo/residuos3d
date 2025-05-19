@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
+    <title>Editar Resíduo</title>
+    <link rel="stylesheet" href="css/style_residuo.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Editar Resíduo</h2>
+        <form id="residuoForm">
+            <input type="hidden" id="residuo_id" name="id" />
+
+            <label>Tipo de uso:</label><br />
+            <label><input type="checkbox" name="uso[]" value="hobby" id="uso_hobby" /> Hobby</label>
+            <label><input type="checkbox" name="uso[]" value="profissional" id="uso_profissional" /> Profissional</label>
+            <br /><br />
+
+            <label>Materiais:</label><br />
+            <label><input type="checkbox" name="materiais[]" value="PLA" id="material_pla" /> PLA</label>
+            <label><input type="checkbox" name="materiais[]" value="PETG" id="material_petg" /> PETG</label>
+            <label><input type="checkbox" name="materiais[]" value="ASA" id="material_asa" /> ASA</label>
+            <label><input type="checkbox" name="materiais[]" value="TPU" id="material_tpu" /> TPU</label>
+            <label><input type="checkbox" name="materiais[]" value="PET" id="material_pet" /> PET</label>
+            <br /><br />
+
+            <label for="gasto_mensal">Estimativa de Gasto Mensal (kg):</label><br />
+            <input type="number" step="0.01" id="gasto_mensal" name="gasto_mensal" required /><br /><br />
+
+            <label for="residuo_mensal">Estimativa de Resíduo Mensal (kg):</label><br />
+            <input type="number" step="0.01" id="residuo_mensal" name="residuo_mensal" required /><br /><br />
+
+            <button type="submit">Salvar Alterações</button>
+            <a href="dashboard.html">Cancelar</a>
+        </form>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/config.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/editar_residuo.js"></script>
+    
+</body>
+</html>

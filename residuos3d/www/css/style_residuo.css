@@ -1,0 +1,382 @@
+/* Reset básico para garantir consistência entre navegadores */
+*,
+::before,
+::after {
+    box-sizing: border-box; /* Define como a largura e a altura dos elementos são calculadas, incluindo bordas e padding */
+    margin: 0; /* Remove as margens padrão dos elementos */
+    padding: 0; /* Remove o padding padrão dos elementos */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a família de fontes principal para o corpo da página, buscando uma fonte moderna e legível */
+    background-color: #e9ecef; /* Define a cor de fundo do corpo como um cinza bem claro e moderno, proporcionando um fundo neutro */
+    color: #495057; /* Define a cor do texto principal como um cinza escuro, oferecendo bom contraste e legibilidade */
+    line-height: 1.6; /* Define a altura da linha para o texto, melhorando a leitura e o espaçamento vertical */
+    display: flex; /* Utiliza o modelo de layout flexbox para organizar os elementos filhos de forma flexível */
+    flex-direction: column; /* Define a direção do flex container como coluna, alinhando os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente dentro do flex container, útil para layouts de página única */
+    padding: 30px; /* Adiciona um padding de 30px em todos os lados do corpo, criando um espaçamento interno */
+}
+
+/* Estilos para o container principal que envolve o conteúdo */
+.container {
+    background-color: #ffffff; /* Define a cor de fundo do container como branco, criando um contraste com o fundo da página */
+    padding: 40px; /* Adiciona um padding de 40px em todos os lados do container, espaçando o conteúdo interno */
+    border-radius: 12px; /* Arredonda as bordas do container, proporcionando um visual mais suave */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Adiciona uma sombra suave ao container, elevando-o visualmente */
+    width: 95%; /* Define a largura do container como 95% do seu elemento pai, garantindo responsividade */
+    max-width: 700px; /* Define uma largura máxima para o container em telas maiores, evitando que o conteúdo fique muito esticado */
+    margin-bottom: 30px; /* Adiciona uma margem inferior de 30px ao container, separando-o de outros elementos abaixo */
+}
+
+/* Estilos para os títulos h1 e h2 */
+h1,
+h2 {
+    color: #343a40; /* Define a cor dos títulos como um preto suave, para destaque */
+    text-align: center; /* Centraliza o texto dos títulos */
+    margin-bottom: 25px; /* Adiciona uma margem inferior de 25px aos títulos, separando-os do conteúdo abaixo */
+    line-height: 1.2; /* Define a altura da linha para os títulos, geralmente menor para melhor impacto visual */
+}
+
+/* Estilos específicos para o título h1 */
+h1 {
+    font-size: 2.5em; /* Define o tamanho da fonte do h1, maior para o título principal */
+}
+
+/* Estilos específicos para o título h2 */
+h2 {
+    font-size: 1.75em; /* Define o tamanho da fonte do h2, menor que o h1 para subtítulos ou seções */
+}
+
+/* Estilos para as labels dos formulários */
+label {
+    display: block; /* Faz com que a label ocupe toda a largura disponível e vá para a próxima linha, melhorando a organização */
+    margin-bottom: 8px; /* Adiciona uma margem inferior de 8px às labels, separando-as dos campos de input */
+    color: #5a6268; /* Define a cor do texto das labels, um pouco mais claro que o texto principal para diferenciá-las */
+}
+
+/* Estilos para os campos de input do tipo texto, email, password e número */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"] {
+    width: 100%; /* Faz com que os inputs ocupem toda a largura disponível do seu container pai, para melhor aproveitamento do espaço */
+    padding: 12px; /* Adiciona um padding interno de 12px aos inputs, criando espaço ao redor do texto digitado */
+    border: 1px solid #ced4da; /* Define uma borda de 1px sólida com uma cor cinza clara, para delimitar visualmente os campos */
+    border-radius: 6px; /* Arredonda as bordas dos inputs, proporcionando um visual mais moderno */
+    margin-bottom: 20px; /* Adiciona uma margem inferior de 20px aos inputs para espaçamento entre os campos */
+    font-size: 0.95em; /* Define um tamanho de fonte ligeiramente menor para os inputs, mantendo a legibilidade */
+}
+
+/* Estilos para os botões */
+button {
+    background-color: #007bff; /* Define a cor de fundo padrão dos botões como azul, cor primária para ações */
+    color: #ffffff; /* Define a cor do texto dos botões como branco, para bom contraste com o fundo azul */
+    padding: 12px 20px; /* Adiciona padding interno aos botões, definindo seu tamanho */
+    border: none; /* Remove a borda padrão dos botões, para um visual mais limpo */
+    border-radius: 6px; /* Arredonda as bordas dos botões, para um visual mais moderno */
+    cursor: pointer; /* Altera o cursor para indicar que o elemento é clicável */
+    font-size: 1em; /* Define o tamanho da fonte dos botões, para boa legibilidade */
+    transition: background-color 0.2s ease-in-out; /* Adiciona uma transição suave para a mudança de cor de fundo ao interagir */
+}
+
+/* Estilos para o estado hover dos botões */
+button:hover {
+    background-color: #0056b3; /* Escurece a cor de fundo no hover, fornecendo feedback visual ao usuário */
+}
+
+/* Estilos para o estado ativo (clicado) dos botões */
+button:active {
+    background-color: #004085; /* Escurece ainda mais a cor de fundo ao clicar, indicando a ação */
+}
+
+/* Estilos para os links */
+a {
+    color: #007bff; /* Define a cor dos links como azul, cor padrão para links */
+    text-decoration: none; /* Remove a decoração de texto padrão (sublinhado), para um visual mais limpo */
+    transition: color 0.2s ease-in-out; /* Adiciona uma transição suave para a mudança de cor ao interagir */
+}
+
+/* Estilos para o estado hover dos links */
+a:hover {
+    color: #0056b3; /* Escurece a cor do link no hover, fornecendo feedback visual */
+}
+
+/* Estilos para a tabela de resíduos */
+#tabela_residuos {
+    width: 100%; /* Faz com que a tabela ocupe toda a largura disponível do seu container pai, para exibir todos os dados */
+    border-collapse: collapse; /* Colapsa as bordas da tabela em uma única borda, para um visual mais limpo */
+    margin-top: 20px; /* Adiciona uma margem superior de 20px à tabela, separando-a de outros elementos acima */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Adiciona uma sombra suave à tabela, elevando-a visualmente */
+    border-radius: 8px; /* Arredonda as bordas da tabela, para um visual mais moderno */
+    overflow: hidden; /* Esconde as bordas que ultrapassam o border-radius, para um visual mais consistente */
+}
+
+/* Estilos para os cabeçalhos (th) e células (td) da tabela */
+#tabela_residuos th,
+#tabela_residuos td {
+    padding: 12px 15px; /* Adiciona padding interno às células, para melhor espaçamento do conteúdo */
+    text-align: left; /* Alinha o texto à esquerda nas células, para facilitar a leitura */
+    border-bottom: 1px solid #dee2e6; /* Define uma borda inferior para as células, separando as linhas */
+}
+
+/* Estilos para os cabeçalhos (th) da tabela */
+#tabela_residuos th {
+    background-color: #f8f9fa; /* Define uma cor de fundo clara para os cabeçalhos, diferenciando-os das células de dados */
+    color: #343a40; /* Define a cor do texto dos cabeçalhos, para bom contraste */
+    font-weight: bold; /* Deixa o texto dos cabeçalhos em negrito, para destaque */
+}
+
+/* Remove a borda inferior da última linha da tabela */
+#tabela_residuos tr:last-child td {
+    border-bottom: none; /* Evita uma borda desnecessária na parte inferior da tabela */
+}
+
+/* Estilo de hover para as linhas da tabela */
+#tabela_residuos tr:hover {
+    background-color: #f5f5f5; /* Adiciona um fundo cinza claro ao passar o mouse sobre a linha, fornecendo feedback visual */
+}
+
+/* Estilos para o botão de disponibilizar na tabela */
+#tabela_residuos button.btn-disponibilizar {
+    background-color: #28a745; /* Cor de fundo verde, geralmente associada a ações positivas */
+    color: white; /* Cor do texto branco para bom contraste */
+    border: none; /* Remove a borda padrão */
+    padding: 8px 12px; /* Padding interno para definir o tamanho do botão */
+    margin-right: 5px; /* Margem à direita para espaçamento entre botões na mesma célula */
+    cursor: pointer; /* Indica que o elemento é clicável */
+    border-radius: 4px; /* Bordas arredondadas para um visual mais suave */
+    font-size: 0.9em; /* Tamanho da fonte ligeiramente menor para caber no botão */
+    transition: opacity 0.15s ease-in-out; /* Transição suave para a opacidade ao interagir */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra suave para elevação visual */
+}
+
+#tabela_residuos button.btn-disponibilizar:hover {
+    opacity: 0.9; /* Diminui ligeiramente a opacidade no hover, fornecendo feedback visual */
+}
+
+#tabela_residuos button.btn-disponibilizar:focus {
+    outline: 0; /* Remove a borda de foco padrão do navegador */
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); /* Adiciona uma sombra de foco verde, seguindo a cor do botão */
+}
+
+/* Estilos para o botão de cancelar disponibilização na tabela */
+#tabela_residuos button.btn-cancelar-disponibilidade {
+    background-color: #e04857; /* Cor de fundo vermelha, geralmente associada a ações de cancelamento ou negativas */
+    color: white; /* Cor do texto branco para bom contraste */
+    border: none; /* Remove a borda padrão */
+    width: 160px; /* Largura fixa para manter a consistência visual */
+    padding: 8px 12px; /* Padding interno */
+    margin-right: 5px; /* Margem à direita */
+    cursor: pointer; /* Indica que é clicável */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 0.9em; /* Tamanho da fonte */
+    transition: opacity 0.15s ease-in-out; /* Transição suave para a opacidade */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+#tabela_residuos button.btn-cancelar-disponibilidade:hover {
+    opacity: 0.9; /* Opacidade no hover */
+}
+
+#tabela_residuos button.btn-cancelar-disponibilidade:focus {
+    outline: 0; /* Remove foco padrão */
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Sombra de foco vermelha */
+}
+
+/* Estilos para o botão de editar na tabela */
+#tabela_residuos button.btn-editar {
+    background-color: #007bff; /* Cor de fundo azul, cor primária para ações importantes */
+    color: white; /* Cor do texto branco para bom contraste */
+    border: none; /* Remove a borda padrão */
+    width: 160px; /* Largura fixa para consistência */
+    padding: 8px 12px; /* Padding interno */
+    margin-right: 5px; /* Margem à direita */
+    cursor: pointer; /* Indica que é clicável */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 0.9em; /* Tamanho da fonte */
+    transition: opacity 0.15s ease-in-out; /* Transição suave para a opacidade */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+#tabela_residuos button.btn-editar:hover {
+    opacity: 0.9; /* Opacidade no hover */
+}
+
+#tabela_residuos button.btn-editar:focus {
+    outline: 0; /* Remove foco padrão */
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25) /* Sombra de foco azul */
+}
+
+/* Estilos para o container dos botões de formulário */
+.form-buttons {
+    display: flex; /* Usa flexbox para alinhar os botões horizontalmente */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 15px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Margem superior para separar dos campos do formulário */
+}
+
+/* Estilos para os botões dentro do container de botões de formulário */
+.form-buttons button {
+    padding: 10px 20px; /* Padding interno para definir o tamanho dos botões */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Indica que é clicável */
+    font-size: 1em; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito para destaque */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+/* Estilos específicos para o botão de submit (Cadastrar) */
+.form-buttons button[type="submit"] {
+    background-color: #28a745; /* Cor de fundo verde, para ações de confirmação ou envio */
+    color: white; /* Cor do texto branco para bom contraste */
+}
+
+.form-buttons button[type="submit"]:hover {
+    background-color: #218838; /* Verde mais escuro no hover */
+}
+
+/* Estilos específicos para o botão de cancelar cadastro */
+.form-buttons button#cancelarCadastro {
+    background-color: #dc3545; /* Cor de fundo vermelha, para ações de cancelamento */
+    color: white; /* Cor do texto branco para bom contraste */
+}
+
+.form-buttons button#cancelarCadastro:hover {
+    background-color: #c82333; /* Vermelho mais escuro no hover */
+}
+
+/* Estilos para o container dos botões de confirmação (cancelar disponibilização) */
+.confirmation-buttons button.confirm-button {
+    background-color: #28a745; /* Verde para confirmar */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Padding interno */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Indicador de clique */
+    font-size: 1em; /* Tamanho da fonte */
+}
+
+.confirmation-buttons button.cancel-button {
+    background-color: #dc3545; /* Vermelho para cancelar */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Padding interno */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Indicador de clique */
+    font-size: 1em; /* Tamanho da fonte */
+}
+
+/* Estilos específicos para a página inicial */
+.botoes {
+    display: flex; /* Alinha os botões horizontalmente */
+    justify-content: center; /* Centraliza os botões */
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-top: 30px; /* Margem superior para separar do conteúdo acima */
+}
+
+.botoes button {
+    padding: 15px 25px; /* Padding maior para os botões da home, tornando-os mais fáceis de clicar */
+    font-size: 1.1em; /* Fonte um pouco maior para melhor legibilidade */
+}
+
+/* Estilo específico para o botão de Login na página inicial */
+.botoes button:first-child { /* Assume que o botão de Login é o primeiro */
+    background-color: #28a745; /* Verde, geralmente associado a ações de confirmação ou entrada */
+    color: white; /* Texto branco para bom contraste */
+    border: none; /* Remove a borda padrão */
+    border-radius: 6px; /* Bordas arredondadas para um visual mais suave */
+    cursor: pointer; /* Indica que o elemento é clicável */
+    transition: background-color 0.2s ease-in-out; /* Transição suave para a cor de fundo ao interagir */
+}
+
+.botoes button:first-child:hover {
+    background-color: #1e7e34; /* Verde mais escuro no hover, fornecendo feedback visual */
+}
+
+.botoes button:first-child:active {
+    background-color: #155321; /* Verde ainda mais escuro ao clicar, indicando a ação */
+}
+
+/* Estilo específico para o botão de Cadastro na página inicial */
+.botoes button:last-child { /* Assume que o botão de Cadastro é o último */
+    background-color: #007bff; /* Azul, cor primária para ações importantes ou informativas */
+    color: white; /* Texto branco para bom contraste */
+    border: none; /* Remove a borda padrão */
+    border-radius: 6px; /* Bordas arredondadas */
+    cursor: pointer; /* Indica que o elemento é clicável */
+    transition: background-color 0.2s ease-in-out; /* Transição suave para a cor de fundo */
+}
+
+.botoes button:last-child:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+}
+
+.botoes button:last-child:active {
+    background-color: #004085; /* Azul ainda mais escuro ao clicar */
+}
+
+/* Estilos específicos para a página de login */
+.form-container {
+    background-color: #ffffff; /* Fundo branco para o container do formulário, criando destaque */
+    padding: 30px; /* Padding interno para espaçamento do conteúdo */
+    border-radius: 10px; /* Bordas arredondadas para um visual mais suave */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para elevar o formulário visualmente */
+    width: 90%; /* Largura do formulário, responsivo */
+    max-width: 400px; /* Largura máxima para evitar que o formulário fique muito largo em telas grandes */
+    margin-top: 20px; /* Margem superior para separar do conteúdo acima */
+}
+
+.form-container h2 {
+    text-align: center; /* Centraliza o título do formulário */
+    color: #333; /* Cor do texto do título */
+    margin-bottom: 20px; /* Margem inferior para separar do conteúdo abaixo */
+}
+
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%; /* Faz com que os campos de input ocupem toda a largura do container */
+    padding: 10px; /* Padding interno para melhor usabilidade */
+    margin-bottom: 15px; /* Margem inferior para espaçamento entre os campos */
+    border: 1px solid #ccc; /* Borda cinza clara para os campos */
+    border-radius: 5px; /* Bordas arredondadas para os campos */
+}
+
+.form-container button {
+    width: 100%; /* Faz com que o botão ocupe toda a largura do container */
+    padding: 10px; /* Padding interno para o botão */
+    border: none; /* Remove a borda padrão do botão */
+    background-color: #28a745; /* Verde para o botão de Login, indicando ação principal */
+    color: white; /* Texto branco para bom contraste */
+    border-radius: 5px; /* Bordas arredondadas para o botão */
+    cursor: pointer; /* Indica que o elemento é clicável */
+}
+
+.form-container button:hover {
+    background-color: #155321; /* Verde mais escuro no hover */
+}
+
+.form-container p {
+    text-align: center; /* Centraliza o texto do parágrafo */
+    margin-top: 15px; /* Margem superior para separar do botão */
+}
+
+.confirmation-buttons button#btnCancelar {
+    background-color: #dc3545; /* Vermelho para Cancelar, indicando ação negativa */
+    color: white; /* Texto branco para bom contraste */
+}
+
+.confirmation-buttons button#btnCancelar:hover {
+    background-color: #c82333; /* Vermelho mais escuro no hover */
+}
+
+.confirmation-buttons button#btnManterDisponivel {
+    background-color: #28a745; /* Verde para Fechar e Manter Disponível, ação positiva */
+    color: white; /* Texto branco para bom contraste */
+}
+
+.confirmation-buttons button#btnManterDisponivel:hover {
+    background-color: #218838; /* Verde mais escuro no hover */
+}

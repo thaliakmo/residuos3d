@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
+    <title>Cadastrar Resíduo</title>
+    <link rel="stylesheet" href="css/style_residuo.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Cadastrar Resíduo Disponível</h2>
+        <form id="residuoForm">
+            <input type="hidden" id="residuo_id" name="id" />
+
+            <label>Tipo de uso:<br />
+              <label><input type="checkbox" name="uso[]" value="hobby" id="uso_hobby" /> Hobby</label>
+              <label><input type="checkbox" name="uso[]" value="profissional" id="uso_profissional" /> Profissional</label>
+          </label>
+          <br /><br />
+          
+          <label>Materiais:<br />
+              <label><input type="checkbox" name="materiais[]" value="PLA" id="material_pla" /> PLA</label>
+              <label><input type="checkbox" name="materiais[]" value="PETG" id="material_petg" /> PETG</label>
+              <label><input type="checkbox" name="materiais[]" value="ASA" id="material_asa" /> ASA</label>
+              <label><input type="checkbox" name="materiais[]" value="TPU" id="material_tpu" /> TPU</label>
+              <label><input type="checkbox" name="materiais[]" value="PET" id="material_pet" /> PET</label>
+          </label>
+          <br /><br />
+          
+          <label for="gasto_mensal">Estimativa de Gasto Mensal (g):</label><br />
+          <input type="number" step="0.01" id="gasto_mensal" name="gasto_mensal" required /><br /><br />
+          
+          <label for="residuo_mensal">Estimativa de Resíduo Mensal (g):</label><br />
+          <input type="number" step="0.01" id="residuo_mensal" name="residuo_mensal" required /><br /><br />
+
+            <div class="form-buttons">
+                <button type="submit">Disponibilizar</button>
+                <button type="button" id="cancelarCadastro">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/config.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/cadastro_residuo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+/* Estilos gerais para o body da página */
+body {
+    background-color: #E4E4E4; /* Cor de fundo inicial */
+    background-image: linear-gradient(to bottom, #A7A7A7 0%, #E4E4E4 51%); /* Gradiente de fundo para um efeito visual */
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif; /* Fonte do sistema para melhor compatibilidade */
+    font-size: 12px; /* Tamanho da fonte base */
+    height: 100vh; /* Garante que o body ocupe toda a altura da viewport */
+    margin: 0px; /* Remove margens padrão */
+    padding: 0px; /* Remove paddings padrão */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px); /* Padding para evitar sobreposição com barras de navegação em dispositivos com notch */
+    text-transform: uppercase; /* Converte todo o texto para maiúsculo */
+    width: 100%; /* Garante que o body ocupe toda a largura da viewport */
+}
+
+/* Layout retrato (padrão) para dispositivos móveis */
+.app {
+    background: url(../img/logo.png) no-repeat center top; /* Define a imagem de fundo, sem repetição, centralizada no topo */
+    position: absolute; /* Permite posicionamento preciso dentro de um container posicionado */
+    left: 50%; /* Posiciona a borda esquerda no centro do container pai */
+    top: 50%; /* Posiciona a borda superior no centro do container pai */
+    height: 50px; /* Altura do elemento app */
+    width: 225px; /* Largura do elemento app */
+    text-align: center; /* Centraliza o texto dentro do elemento */
+    padding: 180px 0px 0px 0px; /* Padding superior para espaçamento abaixo da imagem de fundo */
+    margin: -115px 0px 0px -112px; /* Margens negativas para centralizar o elemento na tela */
+}
+
+/* Layout paisagem para tablets e alguns celulares */
+@media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
+    .app {
+        background-position: left center; /* Altera a posição da imagem de fundo para a esquerda e centro */
+        padding: 75px 0px 75px 170px; /* Ajusta o padding para o layout paisagem */
+        margin: -90px 0px 0px -198px; /* Ajusta as margens para o layout paisagem */
+    }
+}
+
+/* Estilos para o título principal (h1) */
+h1 {
+    font-size: 24px; /* Tamanho da fonte do título */
+    font-weight: normal; /* Remove o peso extra da fonte (negrito padrão) */
+    margin: 0px; /* Remove margens padrão */
+    overflow: visible; /* Garante que o conteúdo não seja cortado */
+    padding: 0px; /* Remove paddings padrão */
+    text-align: center; /* Centraliza o texto do título */
+}
+
+/* Estilos para elementos com a classe 'event' */
+.event {
+    border-radius: 4px; /* Arredonda as bordas do elemento */
+    color: #FFFFFF; /* Cor do texto branco */
+    font-size: 12px; /* Tamanho da fonte */
+    margin: 0px 30px; /* Margens laterais para espaçamento */
+    padding: 2px 0px; /* Padding superior e inferior */
+}
+
+/* Estilos para o elemento 'event' quando a aplicação está 'ouvindo' (aguardando alguma ação) */
+.event.listening {
+    background-color: #333333; /* Cor de fundo cinza escuro */
+    display: block; /* Exibe o elemento como um bloco */
+}
+
+/* Estilos para o elemento 'event' quando a aplicação 'recebeu' alguma informação */
+.event.received {
+    background-color: #4B946A; /* Cor de fundo verde */
+    display: none; /* Oculta o elemento por padrão */
+}
+
+/* Oculta o estado de 'ouvindo' quando o dispositivo está pronto */
+#deviceready.ready .event.listening {
+    display: none;
+}
+
+/* Exibe o estado de 'recebido' quando o dispositivo está pronto */
+#deviceready.ready .event.received {
+    display: block;
+}
+
+/* Animação de fade (transparência) */
+@keyframes fade {
+    from { opacity: 1.0; } /* Início da animação: totalmente visível */
+    50% { opacity: 0.4; } /* Meio da animação: parcialmente transparente */
+    to { opacity: 1.0; } /* Fim da animação: totalmente visível */
+}
+
+/* Aplica a animação de 'fade' para criar um efeito de blink */
+.blink {
+    -webkit-animation: fade 3000ms infinite; /* Animação para navegadores WebKit (Safari, Chrome) */
+    animation: fade 3000ms infinite; /* Animação padrão */
+}
+
+/* Estilos para tema escuro (se o dispositivo preferir) */
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-image: linear-gradient(to bottom, #585858 0%, #1B1B1B 51%); /* Gradiente de fundo para o tema escuro */
+    }
+}

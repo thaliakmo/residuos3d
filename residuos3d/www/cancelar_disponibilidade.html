@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancelar Disponibilização de Resíduo</title>
+    <link rel="stylesheet" href="css/style_residuo.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tem certeza que deseja cancelar a disponibilização do resíduo?</h2>
+        <p>O resíduo não ficará mais visível para alguém entrar em contato com você para recolhimento.</p>
+        <p>Caso realmente for cancelar a disponibilização, pode nos informar o motivo?</p>
+
+        <form id="cancelarForm">
+            <div>
+                <input type="radio" id="retirado" name="motivo" value="Já foi retirado" required>
+                <label for="retirado">Já foi retirado</label>
+            </div>
+
+            <div>
+                <input type="radio" id="demorando" name="motivo" value="Desisti de disponibilizar pois está demorando"
+                    required>
+                <label for="demorando">Desisti de disponibilizar pois está demorando</label>
+            </div>
+
+            <div>
+                <input type="radio" id="experiencia_ruim" name="motivo"
+                    value="Desisti de disponibilizar pois tive uma experiência ruim" required>
+                <label for="experiencia_ruim">Desisti de disponibilizar pois tive uma experiência ruim</label>
+            </div>
+
+            <div>
+                <input type="radio" id="armazenar" name="motivo" value="Decidi armazenar para outros fins" required>
+                <label for="armazenar">Decidi armazenar para outros fins</label>
+            </div>
+
+            <div>
+                <input type="radio" id="levar_eu_mesmo" name="motivo" value="Decidi levar eu mesmo para" required>
+                <label for="levar_eu_mesmo">Decidi levar eu mesmo para ... Onde?</label>
+                <input type="text" id="onde" name="onde" placeholder="Informe o destino" style="display: none;">
+            </div>
+
+            <div class="confirmation-buttons">
+                <button type="button" id="btnCancelar" class="confirm-button">Confirmar Cancelamento</button>
+                <button type="button" id="btnManterDisponivel" class="cancel-button">Fechar e Manter Disponível</button>
+            </div>
+            <input type="hidden" id="residuoId">
+        </form>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cancelar_disponibilidade.js"></script>
+    <script>
+        // Recupera o ID da URL e define no campo hidden
+        const urlParams = new URLSearchParams(window.location.search);
+        const residuoId = urlParams.get('id');
+        document.getElementById('residuoId').value = residuoId;
+    </script>
+</body>
+
+</html>
